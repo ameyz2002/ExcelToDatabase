@@ -1,0 +1,69 @@
+#enum : STRING,INT,DATE
+#excel properties
+excelPath: D:/DataMart/exelToDb/DM_CJMS_AGG_CNT.xlsx
+sheetName: DM_CJMS_AGG_CNT
+
+#database properties (mssql/PostgreSQL/oracle)
+#for oracle -> dbHost=TNS-Name , dbSchema=wallet path
+
+# PostgreSQL
+# --------------------
+#dbName: PostgreSQL
+#dbHost: ec2-52-201-168-60.compute-1.amazonaws.com
+#dbPort: 5432
+#dbSchema: dfaglh0igucke5
+#dbUser: cflxktfaaeupnj
+#dbPassword: 05a7a43da186681db8d4b711c125f3d5d64bf654d12e3b2d0e5973cbcd1db02c
+
+#dbName: PostgreSQL
+#dbHost: localhost
+#dbPort: 5432
+#dbSchema: postgres
+#dbUser: postgres
+#dbPassword: root
+
+# oracle (dbHost=TNS_Name , dbSchema=wallet_path , dbPort = dummy)
+# --------------------
+#dbName: oracle
+#dbHost: dbsrc_high
+#dbPort: 0000
+#dbSchema: D:/DOCUMENTS/ORACLE_FREE_TIER/Wallet_dbSRC
+#dbUser: ADMIN
+#dbPassword: Oraclesrc2022
+
+# mssql
+# --------------------
+dbName: mssql
+dbHost: IBX-BIDEV-SQLDB
+dbPort: 1433
+dbSchema: DATAONE_DEV
+dbUser: bi_user1
+dbPassword: ibexi@2015
+
+#dbName: mssql
+#dbHost: si-core-etl
+#dbPort: 1433
+#dbSchema: DATAONE_DEV
+#dbUser: bi_user3
+#dbPassword: ibexi@2015
+
+#insert statement
+#sql: INSERT INTO employee (id, name, email,joining_date) VALUES (?, ?, ?,?)
+#sql: INSERT INTO DATAONE_DEV.kafkaoa.audit_2 (AUDIT_ID,JOB_ID,BATCH_ID,SUB_BATCH_ID,WF_NUM,TABLE_NAME,BATCH_START_DATE,BATCH_END_DATE,BUSINESS_START_DATE,BUSINESS_END_DATE,STATUS_NUM,REMARKS,Failure_Point,Technical_Error_Code,Status_Desc,Technical_Error_Desc) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?)
+#sql: INSERT INTO ssi_dwh.lit_reserves (litigation_id, lit_participant_id, lit_pmnt_article_id, lit_reserve_id, lit_reserve_num, reserve_type_cd, reserve_type_desc, reserve_reason_cd, reserve_reason_desc, reserve_currency_cd, reserve_currency_desc, reserve_created_dt, reserve_seq_nr, reserve_amt_home_cur, reserve_amt_tran_cur, lit_payment_id, reserve_remarks, sent_to_ri_ind, aud_src_sys_nm, aud_src_sys_id, aud_src_sys_cd, aud_src_sys_updt_ver_id, aud_batch_id, aud_sub_batch_id, aud_iu_flag, last_update_date, last_update_user) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+#sql: INSERT INTO ssi_audit.ssi_dwh_cms (target_table_name, target_column_name, target_data_type, source_table, select_clause_column, source_column_data_type, ods_tables, join_condition, sub_join_condition, "union", group_by, transformation_expression, target_table_pk) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+#sql: INSERT INTO DATAONE_DEV.SI_AUDIT_SSI_TEST_DM.SSI_DM_CMS (Target_Table_Name, Target_Column_Name, Target_Data_Type, Source_Table, select_clause_column, Source_Column_Data_Type, ODS_Tables, Join_Condition, SUB_JOIN_CONDITION, [union], Group_by, Transformation_Expression, Target_Table_PK) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+#cms
+#sql: INSERT INTO DATAONE_DEV.SI_AUDIT_SSI_ABSA.SSI_DWH_CMS (Target_Table_Name, Target_Column_Name, Target_Data_Type, Source_Table, select_clause_column, Source_Column_Data_Type, ODS_Tables, Join_Condition, SUB_JOIN_CONDITION, [union], Group_by, Transformation_Expression, Target_Table_PK) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+#cjms
+#sql: INSERT INTO DATAONE_DEV.SI_AUDIT_SSI_ABSA.SSI_DWH_CJMS (Join_Tables, src_table_1, src_table_2, src_table_2_Alias, on_clause, [where]) VALUES(?, ?, ?, ?, ?, ?);
+
+#DM_CJMS_AGG_CNT
+sql: INSERT INTO DATAONE_DEV.SI_AUDIT_SSI_DM.SSI_DWH_CJMS (Join_Tables, src_table_1, src_table_2, src_table_2_Alias, on_clause, [where]) VALUES(?, ?, ?, ?, ?, ?);
+
+
+
+
+
